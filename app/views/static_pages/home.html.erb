@@ -1,6 +1,13 @@
 <% provide(:title, "Home") %>
+
+<div class="center jumbotron">
 <h1>No Books, No Life</h1>
-<p>
+<h2>
   This is the home page for the Book Application by "taniiiiim".
-</p>
-  </body>
+</h2>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("cat.png", alt: "cat.logo"),
+            'https://www.motivation-cloud.com/' %>
