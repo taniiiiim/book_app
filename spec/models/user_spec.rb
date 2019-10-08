@@ -26,8 +26,8 @@ RSpec.describe User, type: :model do
     expect(@user).not_to be_valid
   end
 
-  it "name should not be too long" do
-    @user.name = "a"*244 + "@example.com"
+  it "email should not be too long" do
+    @user.email = "a"*244 + "@example.com"
     expect(@user).not_to be_valid
   end
 
@@ -64,5 +64,8 @@ RSpec.describe User, type: :model do
     expect(@user).not_to be_valid
   end
 
+  it "authenticated? should return false for a user with nil digest" do
+   expect(@user.authenticated?('')).to be_falsey
+  end
 
 end
