@@ -1,0 +1,25 @@
+<% if current_user == User.find(params[:id]) %>
+  <h3>Add a book</h3>
+<%= form_for(@book) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :book_name  %>
+    <%= f.text_field :book_name, placeholder: "Book name" %>
+    <%= f.label :first_name  %>
+    <%= f.text_field :first_name, placeholder: "Auther's first name" %>
+    <%= f.label :last_name  %>
+    <%= f.text_field :last_name, placeholder: "Auther's last name" %>
+    <%= f.label :published  %>
+    <%= f.number_field :published, placeholder: "Published year" %>
+    <%= f.label :price  %>
+    <%= f.number_field :price, placeholder: "Price" %>
+    <%= f.label :isbn  %>
+    <%= f.text_field :isbn, placeholder: "ISBN" %>
+    <%= f.label :category  %>
+    <%= f.text_field :category, placeholder: "Category" %>
+    <%= f.label :abstract  %>
+    <%= f.text_area :abstract, placeholder: "Abstract" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+<% end %>

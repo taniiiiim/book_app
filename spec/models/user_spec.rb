@@ -68,4 +68,17 @@ RSpec.describe User, type: :model do
    expect(@user.authenticated?('')).to be_falsey
   end
 
+  it "associated books should be destroyed" do
+    @user.save
+    @user.books.create!(book_name: "Example", first_name: "Example", last_name: "User", published: "2019", price: 500, category: "Example", abstract: "example", isbn: "111-1-11-111111-1")
+    count = Book.count
+    @user.destroy
+    expect(count).not_to eq Book.count
+  end
+
+  it "feed should have the right posts" do
+
+
+  end
+
 end

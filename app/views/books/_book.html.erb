@@ -1,0 +1,26 @@
+<li id="book-<%= book.id %>">
+  <span class="book_name_and_auther">
+  <%= book.book_name %> by <%= book.first_name %> <%= book.last_name %></span>
+  <span class="book_info">Published: <%= book.published %></span>
+  <span class="book_info">Price: ¥<%= book.price %></span>
+  <span class="book_info">ISBN: <%= book.isbn %></span>
+  <span class="book_info">Category: <%= book.category %></span>
+  <span class="abstract">Abstract</span>
+  <span class="abstract jumbotron"_><%= book.abstract %></span>
+  <span class="timestamp">
+    Owned by <%= User.find(book.user_id).name %>
+  </span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(book.created_at) %> ago.
+  </span>
+  <span class="timestamp">
+    Updated <%= time_ago_in_words(book.updated_at) %> ago.
+  </span>
+  <span class="timestamp">
+    <% if current_user?(book.user) %>
+      <%= link_to "Update", edit_book_path(book.id) %>
+      <%= link_to "Delete", book, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

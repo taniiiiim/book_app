@@ -40,7 +40,7 @@ RSpec.describe "login/logout", type: :request do
     assert_select "a[href=?]", user_path(@user), count: 0
   end
 
- it "login with remembering" do
+  it "login with remembering" do
     log_in_as(@user, remember_me: '1')
     expect(cookies['remember_token'].empty?).to be_falsey
   end

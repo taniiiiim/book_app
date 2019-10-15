@@ -226,7 +226,7 @@ input {
   .book_name_and_auther {
     font-size: 1.5em;
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     img {
       display: block;
       padding: 5px 0;
@@ -234,15 +234,12 @@ input {
   }
   .book_info {
     font-size: 1em;
-    display: block;
-    margin-left: 1em;
+    margin-left: 1.5em;
   }
 
   .abstract {
     font-size: 1.2em;
     display: block;
-    margin-top: 1em;
-    margin-left: 1em;
     img {
       display: block;
       padding: 5px 0;
@@ -251,8 +248,7 @@ input {
   .timestamp {
     color: $gray-light;
     display: block;
-    text-align: right;
-    margin-top: 1em;
+    margin-left: 60px;
   }
   .gravatar {
     float: left;

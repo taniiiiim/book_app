@@ -1,0 +1,5 @@
+<%= link_to gravatar_for(User.find(params[:id]),  size: 50), User.find(params[:id]) %>
+<h1><%= User.find(params[:id]).name %></h1>
+
+<span></br>
+<%= pluralize(User.find(params[:id]).books.count, "book") %></span>
